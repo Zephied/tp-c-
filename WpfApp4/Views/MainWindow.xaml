@@ -1,0 +1,28 @@
+﻿<Window x:Class="MyPokemonGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pokemon-Like Game" Height="450" Width="800">
+    <Grid>
+        <ListBox ItemsSource="{Binding Monsters}" SelectedItem="{Binding SelectedMonster}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                        <TextBlock Text="{Binding Health}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ContentControl Content="{Binding SelectedMonster}">
+            <ContentControl.ContentTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" FontSize="20" />
+                        <TextBlock Text="{Binding Health}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
+    </Grid>
+</Window>
